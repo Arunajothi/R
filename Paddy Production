@@ -1,0 +1,8 @@
+padyprody=read.csv("pady_production.csv",header=T
+par(mfrow=c(1,2))
+hist(padyprody$SownAcres, xlab="sown Acres",freq=T,main="",cex.main=0.75)
+plot(padyprody[,2:3],col="RED",xlab="Sown Acres", ylab="Harvested Acres",main="Pady Production",pch=19)
+
+# Grouped
+ggplot(padyprody, aes(fill=Season, y=ProductionBushels,x=Year))+
+  geom_bar(position="dodge", stat="identity")
